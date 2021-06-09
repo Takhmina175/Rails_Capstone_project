@@ -59,5 +59,6 @@ All rights reserved to Nelson Sakwa and Takhmina Makhkamova.
 
 ## Acknowledgements
 
-Design Idea by <a href="https://www.behance.net/sakwadesignstudio">Nelson Sakwa</a> and design available on <a href="https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version"></a> 
+Design Idea by <a href="https://www.behance.net/sakwadesignstudio">Nelson Sakwa</a>
+ and design available on <a href="https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version"></a> 
 
