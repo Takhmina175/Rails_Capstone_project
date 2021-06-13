@@ -1,0 +1,33 @@
+<div class="container mt-4">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+  <h3 class="fw-normal text-secondary mt-3">Sign Up</h3> 
+
+<%= form_for(@user) do |form| %>
+<%= render "shared/form_errors", object: form.object %>
+
+<div class="col-sm-6 col-lg-auto" >
+  <div class="card">
+    <div class="card-body center bg-light">
+
+  <div class="mb-3">
+    <%= form.label :username%>
+    <%= form.text_field :username, class: "form-control", placeholder: "username" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: "form-control", placeholder: "user@mail" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+  </div>
+ 
+   </div>
+  </div>
+</div>
+<% end %>
+  </div>
+ </div>
+</div>

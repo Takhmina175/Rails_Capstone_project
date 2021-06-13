@@ -1,0 +1,25 @@
+<div class="container mt-4">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+<div class = 'page-header'>
+    <h3 class="fw-normal text-secondary mt-3">Log In </h3>
+</div>
+<%= form_tag sessions_path do %>
+<div class="col-sm-6 col-lg-auto" >
+  <div class="card">
+    <div class="card-body center bg-light">
+
+  <div class="form-group">
+    <%= label_tag :username %>
+    <%= text_field_tag :username, params[:username], class: "form-control" %>
+  </div>
+
+  <div class="mt-2">
+    <%= submit_tag "Log In", class: "btn btn-primary" %> 
+  </div>
+  </div>
+  </div>
+<% end %>
+</div>
+</div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      Column
+    </div>
+    <div class="col-lg-6">
+      <%= link_to 'Home', root_path%>
+      <%= link_to 'Write an Article',  new_article_path %>
+    </div>
+    <div class="col-lg-3">
+        <% if current_user %> 
+            <%= link_to 'Log Out', logout_path %>
+        <% else %>
+            <%= link_to "Register", new_user_path %>
+            <%= link_to "Log in", new_session_path %>
+        <% end %>   
+        <i class="bi bi-search"></i>
+    </div>
+  </div>
+</div>
+

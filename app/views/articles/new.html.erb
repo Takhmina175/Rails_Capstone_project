@@ -1,0 +1,32 @@
+<div class="container mt-4">
+<%= form_for(@article) do |form| %>
+<%= render "shared/form_errors", object: form.object %>
+
+<div class="col-sm-6 col-lg-auto" >
+  <div class="card">
+    <div class="card-body center bg-light">
+
+  <div class="mb-3">
+    <%= form.label :image%>
+    <%= form.file_field :image, class: "form-control", placeholder: "title" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :title%>
+    <%= form.text_field :title, class: "form-control", placeholder: "title" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :content %>
+    <%= form.text_field :content , class: "form-control", placeholder: "content " %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+  </div>
+ 
+   </div>
+  </div>
+</div>
+<%	end	%>
+</div>
