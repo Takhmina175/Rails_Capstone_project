@@ -1,4 +1,11 @@
 <div class="container mt-4">
+  <div class="page-header">
+      <div class="d-flex">
+        <h3> Add	Article</h3> &nbsp; &nbsp;
+        <%= link_to 'Add Category',  new_category_path, class: "btn btn-success" %>
+      </div>
+  </div>
+  <hr>
 <%= form_for(@article) do |form| %>
 <%= render "shared/form_errors", object: form.object %>
 
@@ -6,9 +13,14 @@
   <div class="card">
     <div class="card-body center bg-light">
 
+  <select class="form-select" aria-label="Default select example">
+    <option selected><%= form.label :name%></option>
+      <option <%= collection_select(:name, :author_id, Category.all, :id, :name, {}, {:miltiple => false})%> >
+      </option>
+  </select>
   <div class="mb-3">
     <%= form.label :image%>
-    <%= form.file_field :image, class: "form-control", placeholder: "title" %>
+    <%= form.file_field :image, accept: "image/jpeg, image/gif, image/png", class: "form-control", placeholder: "title" %>
   </div>
 
   <div class="mb-3">
@@ -18,7 +30,7 @@
 
   <div class="mb-3">
     <%= form.label :content %>
-    <%= form.text_field :content , class: "form-control", placeholder: "content " %>
+    <%= form.text_area :content , class: "form-control", placeholder: "content " %>
   </div>
 
   <div class="mb-3">

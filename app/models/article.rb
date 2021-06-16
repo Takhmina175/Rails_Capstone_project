@@ -1,18 +1,11 @@
-class Article < ApplicationRecord
-  belongs_to :user, foreign_key: :author_id 
-  has_many :votes 
-  has_one_attached :image
-  has_many :articles_category_lists 
-  has_many :categories, through: :articles_category_lists 
-  
+class Article < ApplicationRecord 
+    belongs_to :author, class_name: 'User'
+    has_one_attached :image
 
-  validates :title, presence: true
-  validates :image, presence: true
-  validates :content, presence: true, length: { maximum: 150 }
+    has_many :votes
+    has_many :articles_category_lists 
+    has_many :categories, :through => :articles_category_lists 
 
-  scope :ordered_by_most_recent, -> { order(created_at: :desc) } 
+validates :image, content_type: {in: %w[image/jpeg image/gif image/png], message: "must be a valid image format"}, size: {less_than: 5.megabytes, message: "should be less than 5MB"}
 
-  def display_image
-    image.variant(resize_to_limit: [500, 500])
-  end
 end

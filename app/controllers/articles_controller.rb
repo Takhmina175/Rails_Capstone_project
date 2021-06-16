@@ -4,15 +4,18 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
- def show 
+  def show 
     @article = Article.find(params[:id])
- end
+  end
+
   def new
+    @categories = Category.all
     @article = Article.new
   end 
 
   def create 
-    @article = current_user.articles.build(article_params)
+    @categories = Category.all
+    @article = @current_user.articles.build(article_params)
     @article.image.attach(params[:article][:image])
     if @article.save
        redirect_to articles_path, notice: "Article created!"
@@ -28,7 +31,7 @@ class ArticlesController < ApplicationController
   def update 
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      redirect_to articles_path, notice: "Article updated successful!"
+      redirect_to articles_path, notice: "Article updated!"
     else 
       render :edit 
     end
@@ -37,7 +40,7 @@ class ArticlesController < ApplicationController
   def destroy 
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to root_path, notice: "Article deleted"
+    redirect_to root_path, notice: "Article deleted!"
   end 
 
   private 
