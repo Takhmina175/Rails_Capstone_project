@@ -1,0 +1,20 @@
+<div class="row justify-content-center">
+<div class="justify-content-start w-75 mb-1 mt-4">
+    <%= link_to '<<Back',  articles_path, class: 'btn btn-secondary' %>
+</div>
+
+<div class="card mb-3 w-75">
+    <%= image_tag @article.image.variant(resize_and_pad: [782, 250]), class: "img-responsive img-fluid" %>
+ <div class="card-body">
+    <h5 class="card-title"><%= @article.title%></h5>
+    Created by: <%=@article.author.username.capitalize%>
+    <p class="card-text"><%= @article.content%></p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning' %>
+    <%= link_to 'Delete', article_path(@article),:method => :delete, class: 'btn btn-danger' %>
+  <div>
+</div>
+</div>
+
+
+

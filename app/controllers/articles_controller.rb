@@ -9,15 +9,16 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @categories = Category.all
     @article = Article.new
   end 
 
-  def create 
-    @categories = Category.all
+  def create
+    @category = Category.find_by(params[:id])
     @article = @current_user.articles.build(article_params)
     @article.image.attach(params[:article][:image])
     if @article.save
+       @category.articles << @article
+       @category.save
        redirect_to articles_path, notice: "Article created!"
     else
       render :new 
@@ -28,8 +29,9 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end 
 
-  def update 
+  def update
     @article = Article.find(params[:id])
+    @category = @article.categories
     if @article.update(article_params)
       redirect_to articles_path, notice: "Article updated!"
     else 
@@ -38,13 +40,13 @@ class ArticlesController < ApplicationController
   end 
 
   def destroy 
-    @article = Article.find(params[:id])
+    @article = Article.find_by(params[:id => :author_id])
     @article.destroy
-    redirect_to root_path, notice: "Article deleted!"
+    redirect_to articles_path, notice: "Article deleted!"
   end 
 
   private 
    def article_params 
-     params.require(:article).permit(:title, :content, :image)
+     params.require(:article).permit(:title, :content, :image, :category)
    end
 end

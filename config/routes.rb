@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :articles
-  resources :categories, only: [:index, :new, :create]
+  resources :categories, only: [:index, :show, :new, :create]
   resources :sessions
   resources :users, only: [:new, :create] 
 
