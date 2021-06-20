@@ -19,8 +19,14 @@
 
   <div class="mb-3">
    <%= form.label :priority %>
-   <%= form.select :priority, [ "High", "Medium", "Low"], class: "form-control" %>
+  <select name="city_id" id="city_id">
+      <option value="0">Select</option>
+      <option value="1">High</option>
+      <option value="2">Medium</option>
+      <option value="12">Low</option>
+  </select>
   </div>
+  
 
   <div class="mb-3">
     <%= form.submit "Submit", class: "btn btn-primary" %>

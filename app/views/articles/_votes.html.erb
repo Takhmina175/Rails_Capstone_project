@@ -1,0 +1,10 @@
+<% if current_user && current_user.votes?(@article)%>
+    <%= link_to "Unvote", article_vote_path(@article), method: :delete, remote: true %>
+<%else%>
+    <%= link_to "Vote", article_vote_path(@article), method: :post, remote: true %> 
+<%end%>
+<%= @article.votes.count %>
+
+
+
+

@@ -1,6 +1,6 @@
 class User < ApplicationRecord 
     has_many :articles, class_name: 'Article', foreign_key: 'author_id'
-    has_many :votes
+    has_many :votes, dependent: :destroy
   
     validates :username, presence: true
     validates :username, uniqueness: { case_sensitive: false }
@@ -9,5 +9,9 @@ class User < ApplicationRecord
     message: "only use alphanumeric characters" }
 
     validates :email, presence: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'invalid email address' } 
-    validates :email, uniqueness: true
+    validates :email, uniqueness: true 
+
+  def votes?(article)
+    article.votes.where(user_id: id).any?
+  end
 end

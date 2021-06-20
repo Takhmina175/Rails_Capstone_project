@@ -11,7 +11,14 @@
     <p class="card-text"><%= @article.content%></p>
     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning' %>
-    <%= link_to 'Delete', article_path(@article),:method => :delete, class: 'btn btn-danger' %>
+    <%= link_to 'Delete', article_path(@article),:method => :delete, class: 'btn btn-danger' %> 
+    
+    <div id="votes">
+      <%= render partial: "votes"%>
+    </div>
+  
+
+
   <div>
 </div>
 </div>
