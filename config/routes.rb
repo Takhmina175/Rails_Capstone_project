@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :articles do 
     resource :vote, only: [:create, :destroy], module: :articles 
   end
-  resources :categories, only: [:index, :show, :new, :create]
+  resources :categories, only: [:index, :show, :new, :create, :destroy]
   resources :sessions
   resources :users, only: [:new, :create] 
 

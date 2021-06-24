@@ -1,21 +1,22 @@
 <div class="container mt-4">
   <div class="page-header">
       <div class="d-flex">
-        <h3> Create	Article</h3> &nbsp; &nbsp;
-        <%= link_to 'Add Category',  new_category_path, class: "btn btn-success" %>
+        <%= link_to '<<Back',  articles_path, class: 'btn btn-secondary' %> &nbsp;
+        <h3> Create	Article</h3> 
       </div>
   </div>
   <hr>
 <%= form_for(@article) do |form| %>
 <%= render "shared/form_errors", object: form.object %>
 
-<div class="col-sm-6 col-lg-auto" >
+<div class="col-sm-6 col-lg-auto w-75 " >
   <div class="card">
     <div class="card-body center bg-light">
 
   <div class="mb-3">
     <%= form.label :category, "Category: ", class: 'form-label fs-5' %>
-    <%= form.collection_select(:id, Category.all, :id, :name,{:miltiple => false}, {:class=>'form-select'},)%>
+    <%= form.collection_select(:id, Category.all, :id, :name, {:prompt =>true}, {:class=>'form-select'})%> 
+    
   </div>
 
   <div class="mb-3">

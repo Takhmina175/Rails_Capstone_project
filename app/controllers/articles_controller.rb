@@ -1,8 +1,9 @@
 class ArticlesController < ApplicationController 
   before_action :authenticate_user!
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  
   def index 
-    @articles = Article.all
+    @articles = Article.all 
+    recent_art 
   end
 
   def show 
@@ -15,14 +16,14 @@ class ArticlesController < ApplicationController
 
   def create
     @category = Category.find_by(params[:id])
-    @article = @current_user.articles.build(article_params)
+    @article = current_user.articles.build(article_params)
     @article.image.attach(params[:article][:image])
     if @article.save
-       @category.articles << @article
-       @category.save
-       redirect_to articles_path, notice: "Article created!"
+    ArticlesCategoryList.create(article_id: @article.id, category_id: @category.id)
+      redirect_to articles_path, notice: "Article created!"
+      recent_art
     else
-      render :new 
+      render :new  
     end
   end 
 
@@ -46,14 +47,12 @@ class ArticlesController < ApplicationController
     redirect_to articles_path, notice: "Article deleted!"
   end 
 
+  def recent_art
+    @recent_art ||= Article.all.ordered_by_most_recent.includes(:author)
+  end
   private 
 
-  def set_article
-    @article = Article.find(params[:id])
+  def article_params 
+    params.require(:article).permit(:title, :content, :image, :category)
   end
-
-   def article_params 
-     params.require(:article).permit(:title, :content, :image, :category)
-   end
-
 end

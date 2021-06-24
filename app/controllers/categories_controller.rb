@@ -13,11 +13,18 @@ class CategoriesController < ApplicationController
     def create 
         @category = Category.new(category_params) 
         if @category.save 
-            redirect_to categories_path, notice: 'You created a category!'
+            redirect_to articles_path, notice: 'You created a category!'
         else
             render :new 
         end
     end 
+
+    def destroy 
+        @category = Category.find(params[:id])
+        @article = Article.find_by(params[:id => :author_id])
+        ArticlesCategoryList.breakup(@category, @article)
+        redirect_to articles_path, notice: "Category deleted!"
+    end
 
     private 
 
