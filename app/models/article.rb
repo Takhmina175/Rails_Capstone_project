@@ -1,4 +1,5 @@
 class Article < ApplicationRecord 
+include ActiveModel::Conversion
     belongs_to :author, class_name: 'User'
     has_one_attached :image
 
@@ -15,4 +16,10 @@ validates :title, length: { maximum: 20}
 
 scope :ordered_by_most_recent, -> { order(created_at: :desc) } 
 
+def max_vote
+   Vote.maximum("article_id")
+end
+def vote_num 
+    @vote_num ||= Article.all.where(:id => max_votes)
+end
 end

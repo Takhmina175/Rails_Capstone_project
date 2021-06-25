@@ -1,9 +1,10 @@
 class ArticlesController < ApplicationController 
+
   before_action :authenticate_user!
   
   def index 
     @articles = Article.all 
-    recent_art 
+    recent_art    
   end
 
   def show 
@@ -51,7 +52,7 @@ class ArticlesController < ApplicationController
     @recent_art ||= Article.all.ordered_by_most_recent.includes(:author)
   end
   private 
-
+ 
   def article_params 
     params.require(:article).permit(:title, :content, :image, :category)
   end
