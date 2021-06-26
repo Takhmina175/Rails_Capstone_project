@@ -3,7 +3,6 @@ class CategoriesController < ApplicationController
         @categories = Category.all
     end
     def show 
-      @category= Category.find_by(params[:id])
     end
 
     def new 
@@ -22,8 +21,13 @@ class CategoriesController < ApplicationController
     def destroy 
         @category = Category.find(params[:id])
         @article = Article.find_by(params[:id => :author_id])
-        ArticlesCategoryList.breakup(@category, @article)
-        redirect_to articles_path, notice: "Category deleted!"
+         if ArticlesCategoryList.find_by_category_id_and_article_id(@user, @friend)
+            ArticlesCategoryList.breakup(@category, @article)
+            redirect_to articles_path, notice: "Category deleted!"
+         else
+            @category.destroy 
+            redirect_to articles_path, notice: "Category deleted!"
+         end
     end
 
     private 

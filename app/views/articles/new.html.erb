@@ -11,13 +11,12 @@
 
 <div class="col-sm-6 col-lg-auto w-75 " >
   <div class="card">
-    <div class="card-body center bg-light">
+    <div class="card-body center bg-light"> 
 
   <div class="mb-3">
     <%= form.label :category, "Category: ", class: 'form-label fs-5' %>
-    <%= form.collection_select(:id, Category.all, :id, :name, {:prompt =>true}, {:class=>'form-select'})%> 
-    
-  </div>
+    <%= form.collection_select(:category_id, Category.order(:name), :id, :name, {:prompt =>true}, {:class=>'form-select'})%> 
+  </div> 
 
   <div class="mb-3">
     <%= form.label :image, "Upload image: ", class: 'form-label fs-5'%>
