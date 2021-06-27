@@ -4,6 +4,8 @@ class CreateArticles < ActiveRecord::Migration[6.1]
       t.integer :author_id
       t.string :title
       t.text :content
+      t.string :image
+      t.integer :category_id
 
       t.timestamps
     end
