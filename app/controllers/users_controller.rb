@@ -1,20 +1,20 @@
 class UsersController < ApplicationController
-  def new 
+  def new
     @user = User.new
   end
 
-  def create 
+  def create
     @user = User.new(user_params)
-    if @user.save 
+    if @user.save
       redirect_to root_path, notice: 'Successfully registered'
     else
-      render :new 
+      render :new
     end
-  end 
+  end
 
-  private 
-  
-    def user_params 
-      params.require(:user).permit(:username, :email)
-    end
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :email)
+  end
 end
