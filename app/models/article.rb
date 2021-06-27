@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-    belong_to :author, class_name: 'User' 
+    belongs_to :author, class_name: 'User' 
     has_one_attached :image 
     has_many :votes, dependent: :destroy
     has_many :articles_category_lists, foreign_key: 'article_id'  
