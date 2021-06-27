@@ -4,12 +4,13 @@ class ArticlesController < ApplicationController
   
   def index 
     @articles = Article.all 
-    recent_art  
+    recent_art 
+    @hvs=high_voted_article(@articles)
+    
   end
 
   def show 
     @article = Article.find(params[:id])
-    @voted_article = Article.find_by(:id => vote_num)
   end
 
   def new
@@ -52,10 +53,12 @@ class ArticlesController < ApplicationController
 
   def recent_art
     @recent_art ||= Article.all.ordered_by_most_recent.includes(:author)
-  end
+  end 
 
-  def vote_num
-   @vote_num ||= Vote.maximum("article_id")
+  def high_voted_article(articles)
+    v = Vote.maximum("article_id") if Vote.count > 0
+    art=articles.includes(:votes).where(:id => v)
+    art.pluck(:title)
   end
 
   private 
