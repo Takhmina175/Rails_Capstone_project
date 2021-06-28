@@ -1,4 +1,14 @@
-## Getting Started
+## Creative Engineering Blogs
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
+> The objective of the project is to provide the latest information about innovations, science,  and technology. The website allows a user to create articles, categories, upload an image and receive upvotes for the content and presentation of the article.
+
+![Private-Events Project Screenshot](image/capture.png)
+
+## Built With
+* Ruby 2.7.2
+* Rails 6.1.3
+* PostgreSQL
 
 **To clone and run the application locally, use the following steps:**
 - On Github, on the main page of the private-event repository, click ![the Code button](images/code.png) and copy "Clone with HTTPS" by clicking ![the copy icon](images/copy.png).
