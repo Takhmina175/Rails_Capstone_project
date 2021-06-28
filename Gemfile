@@ -45,6 +45,7 @@ group :development do
   gem 'spring'
   group :development, :test do
     gem 'rspec-rails'
+    gem 'hirb'
   end
   gem 'rexml'
 end

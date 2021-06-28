@@ -16,7 +16,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @category = Category.find_by(params[:id])
     @article = current_user.articles.build(article_params)
     @article.image.attach(params[:article][:image])
     if @article.save
