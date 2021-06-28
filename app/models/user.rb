@@ -10,7 +10,6 @@ class User < ApplicationRecord
                                  message: 'only use alphanumeric characters' }
 
   validates :email, presence: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'invalid email address' }
-  
 
   def votes?(article)
     article.votes.where(user_id: id).any?
