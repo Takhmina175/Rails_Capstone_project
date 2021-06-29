@@ -50,9 +50,10 @@ group :development do
   gem 'rexml'
 end
 
-group :test do
+group :test do 
   gem 'rspec'
   gem 'shoulda-matchers', '~> 4.0'
+  gem 'capybara', '>= 3.26'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resource :vote, only: [:create, :destroy], module: :articles 
   end
   resources :categories, only: [:index, :show, :new, :create, :destroy]
-  resources :sessions
+  resources :sessions, only: [:new, :create, :destroy] 
   resources :users, only: [:new, :create] 
 
   get 'login', to: 'sessions#new', as: 'login'
