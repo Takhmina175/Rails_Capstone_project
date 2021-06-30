@@ -1,8 +1,8 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-body{
-  background-color:#FCBF49;
+.body_color{
+  background-color:#7f7b78;
 }
 .wrapper{margin:6vh}
 //post card styles
@@ -11,7 +11,7 @@ body{
   border: none;
   transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
   overflow:hidden;
-  border-radius:20px;
+  border-radius:0px;
   min-height:250px;
   box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
 
@@ -92,5 +92,11 @@ a {
 }
 .text_col{
     color: orange;
+} 
+.header_col{
+  color: #7f7b78;
+}
+.bck_cl{
+  background-color: orange;
 }
 }

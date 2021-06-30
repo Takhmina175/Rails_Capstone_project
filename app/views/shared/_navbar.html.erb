@@ -1,22 +1,21 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-3">
-      Column
+<div class="container-fluid">
+  <div class="row ">
+    <div class="col-lg-3 d-flex justify-content-start">
+      <%= image_tag('logos/logo.png', :size => "105x45" )%> 
     </div>
-    <div class="col-lg-6">
-      <%= link_to 'Home', root_path%>&nbsp;
-      <%= link_to 'Write an Article',  new_article_path %>&nbsp;
+    <div class="col-lg-6 d-flex justify-content-center align-items-center ">
+      <%= link_to 'Home', root_path, class:'a_link' %>&nbsp;&nbsp;
+      <%= link_to 'Write an Article', new_article_path, class:'a_link' %>&nbsp;
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-3 d-flex justify-content-end align-items-center">
         <% if current_user %> 
             <%= current_user.username %> | &nbsp;
-            <%= link_to 'Log Out', logout_path %> &nbsp;
+            <%= link_to 'Log Out', logout_path, class:'a_link' %> &nbsp;
         <% else %>
-            <%= link_to "Register", new_user_path %> |&nbsp;
-            <%= link_to "Log in", new_session_path %> &nbsp;
-        <% end %>   
+            <%= link_to "Register", new_user_path, class:'a_link' %> |&nbsp;
+            <%= link_to "Log in", new_session_path, class:'a_link'%> &nbsp;
+        <% end %>&nbsp;   
         <i class="bi bi-search"></i>
     </div>
   </div>
 </div>
-

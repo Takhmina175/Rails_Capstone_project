@@ -19,8 +19,27 @@
   <body>
   <%= render partial: 'shared/navbar'%>
    <%= render partial: 'shared/flash'%> 
-   <div class="container">
+   <section>
       <%= yield %> 
+    </section>
+<footer class="body_color" style="padding-left: 10px; padding-right: 10px" class="position-absolute">
+  <div class="row ">
+    <div class="col-lg-4 ">
+       <%= image_tag('logos/ft_logo.png', :size => "105x50" )%> 
     </div>
-  </body>
+    <div class="col-lg-4 d-flex justify-content-center align-items-center">
+       <small style="font-size: 0.7em;">
+       <span style="color: orange;">Privacy Policy Terms & Conditions.</span> <span style="color: white;">Copyright. All rights reserved</span></small>
+    </div>
+    <div class="col-lg-4 d-flex justify-content-end align-items-center ">
+       <small style="font-size: 0.7em; margin-right: 4px;color: white;">Connect with us: </small>
+       <div>
+        <i class="bi bi-twitter rounded-circle p-1 bck_cl"></i>
+        <i class="bi bi-facebook rounded-circle p-1 bck_cl"></i>
+        <i class="bi bi-instagram rounded-circle p-1 bck_cl"></i>
+       </div>
+    </div>
+    </div>
+</footer>
+</body>
 </html>

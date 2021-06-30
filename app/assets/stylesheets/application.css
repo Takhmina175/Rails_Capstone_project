@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+footer{
+  margin-top: auto;
+}
+ .a_link {
+    color: #7f7b78;
+    text-decoration: none;
+}
+.bck_cl{
+  background-color: orange;
+}

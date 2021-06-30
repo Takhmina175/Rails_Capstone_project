@@ -1,16 +1,18 @@
-<div class="container mt-4">
+  <div class="container w-75">
   <div class="page-header">
       <div class="d-flex">
         <%= link_to '<<Back',  articles_path, class: 'btn btn-secondary' %> &nbsp;
-        <h3> Create	Article</h3> 
+        <h3 style="color: #7f7b78;"> Create	Article</h3> 
       </div>
   </div>
   <hr>
+</div>
+<div class="container mt-4">
 <%= form_for(@article) do |form| %>
 <%= render "shared/form_errors", object: form.object %>
 
-<div class="col-sm-6 col-lg-auto w-75 " >
-  <div class="card">
+<div class="col-sm-6 col-lg-auto w-75 " style="margin-left: 6em;">
+  <div class="card_d">
     <div class="card-body center bg-light"> 
 
   <div class="mb-3">
