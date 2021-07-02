@@ -1,11 +1,11 @@
 <div class="container-fluid body_color">
   <div class="row gx-0 gy-0">
     <div class="col-lg-9">
-     <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/900x400/?computer,design');">
-        <img class="card-img d-none" src="https://source.unsplash.com/600x400/?computer,design" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+     <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/900x700/?computer,design');">
+        <img class="card-img d-none" src="https://source.unsplash.com/600x700/?computer,design" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
         <div class="card-img-overlay d-flex flex-column">
          <div class="card-body bottom-left">
-            <h6 class="card-title mt-0"><a class="text_col" herf="#">Goverment Lorem Ipsum Sit Amet Consectetur dipisi?</a></h6>
+            <h6 class="card-title mt-0"><%=@high_voted.title if Vote.exists?%> </h6>
             <small class="card-meta mb-1">Thought Leadership</small>
          </div>
         </div>
@@ -23,51 +23,23 @@
         </div>
     </div>
   </div>
-  <div class="row gx-0 gy-0">
-    <div class="col-lg-3">
-        <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/200x200/?tech,street');">
-            <img class="card-img d-none" src="https://source.unsplash.com/200x400/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-            <div class="card-img-overlay d-flex flex-column">
-            <div class="card-body r">  
-               <small class="card-meta mb-2 text_docor top-left">Thought Leadership</small>
-               <small class="card-title mt-0 bottom-left "><a class="text-white" herf="#">Lorem Ipsum</a></small>
+
+<div class="row gx-0 gy-0"> 
+    <% @categories.all.each do |c|%>
+      <div class="col-lg-3">
+          <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/230x200/?tech,street');">
+              <img class="card-img d-none" src="https://source.unsplash.com/200x200/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+              <div class="card-img-overlay d-flex flex-column">
+              <div class="card-body r">  
+                <small class="card-meta mb-2 text_docor top-left"><%= c.name %><br></small>
+                <small class="card-title mt-0 bottom-left "><%= c.articles.last.title if c.articles.exists?%><br></small>
+              </div>
             </div>
           </div>
-        </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/200x200/?tech,street');">
-            <img class="card-img d-none" src="https://source.unsplash.com/200x400/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-            <div class="card-img-overlay d-flex flex-column">
-            <div class="card-body r">  
-               <small class="card-meta mb-2 text_docor top-left">Thought Leadership</small>
-               <small class="card-title mt-0 bottom-left "><a class="text-white" herf="#">Lorem Ipsum</a></small>
-            </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/200x200/?tech,street');">
-            <img class="card-img d-none" src="https://source.unsplash.com/200x400/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-            <div class="card-img-overlay d-flex flex-column">
-              <div class="card-body r">  
-                <small class="card-meta mb-2 text_docor top-left">Thought Leadership</small>
-                <small class="card-title mt-0 bottom-left "><a class="text-white" herf="#">Lorem Ipsum</a></small>
-               </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/200x200/?tech,street');">
-            <img class="card-img d-none" src="https://source.unsplash.com/200x400/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-            <div class="card-img-overlay d-flex flex-column">
-            <div class="card-body r">  
-               <small class="card-meta mb-2 text_docor top-left">Thought Leadership</small>
-               <small class="card-title mt-0 bottom-left "><a class="text-white" herf="#">Lorem Ipsum</a></small>
-            </div>
-            </div>
-        </div>
-    </div>
+      </div>
+    <%end%> 
   </div>
-</div>
-</section>
+
+</div> 
+
+

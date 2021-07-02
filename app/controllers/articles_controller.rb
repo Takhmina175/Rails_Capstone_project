@@ -3,8 +3,8 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    recent_art
-    @hvs = high_voted_article(@articles)
+    recent_art 
+    @high_voted = Article.find_by_id(h_votes)
   end
 
   def show
@@ -49,12 +49,11 @@ class ArticlesController < ApplicationController
 
   def recent_art
     @recent_art ||= Article.all.ordered_by_most_recent.includes(:author)
-  end
+  end 
+  
 
-  def high_voted_article(articles)
-    v = Vote.maximum('article_id') if Vote.count.positive?
-    art = articles.includes(:votes).where(id: v)
-    art.pluck(:title)
+  def h_votes
+    Vote.maximum(:article_id)
   end
 
   private

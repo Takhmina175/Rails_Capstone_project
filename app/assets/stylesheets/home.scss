@@ -5,6 +5,7 @@
   background-color:#7f7b78;
 }
 .wrapper{margin:6vh}
+//post card styles
 
 .card{
   border: none;
@@ -45,8 +46,16 @@
      }
   }
 }
-
- .card-meta{color:orange}
+ .card-footer{
+  background: none;
+   border-top: none;
+    .media{
+     img{
+       border:solid 3px rgba(234,95,0,0.3);
+     }
+   }
+ }
+ .card-meta{color:white}
  .card-body{ 
    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -86,8 +95,5 @@ a {
 } 
 .header_col{
   color: #7f7b78;
-}
-.bck_cl{
-  background-color: orange;
 }
 }

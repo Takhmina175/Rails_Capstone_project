@@ -12,7 +12,7 @@
 <%= render "shared/form_errors", object: form.object %>
 
 <div class="col-sm-6 col-lg-auto" >
-  <div class="card">
+  <div class="card_d">
     <div class="card-body center bg-light">
 
 
@@ -23,7 +23,7 @@
 
   <div class="mb-3">
     <%= form.label :priority %>  
-    <%= form.select :priority, [ "High", "Medium", "Low"], :include_blank => true, class: "form-select" %>
+    <%= form.select :priority, ['A => High',  'B => Medium', 'C => Low'], :include_blank => true, class: "form-select" %>
   </div>
 
   <div class="mb-3">
