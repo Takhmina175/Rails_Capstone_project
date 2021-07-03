@@ -28,10 +28,13 @@ gem 'image_processing', '~> 1.2'
 gem 'mini_magick'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'shrine', '~> 3.3'
+gem 'shrine-cloudinary', '~> 1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -47,13 +50,14 @@ group :development do
     gem 'hirb'
     gem 'rspec-rails'
   end
+  gem 'aws-sdk-s3', '1.46.0', require: false
   gem 'rexml'
 end
 
-group :test do 
+group :test do
+  gem 'capybara', '>= 3.26'
   gem 'rspec'
   gem 'shoulda-matchers', '~> 4.0'
-  gem 'capybara', '>= 3.26'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

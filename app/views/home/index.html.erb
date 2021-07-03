@@ -5,23 +5,25 @@
         <img class="card-img d-none" src="https://source.unsplash.com/600x700/?computer,design" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
         <div class="card-img-overlay d-flex flex-column">
          <div class="card-body bottom-left">
-            <h6 class="card-title mt-0"><%=@high_voted.title if Vote.exists?%> </h6>
+            <h6 class="card-title mt-0"><%= link_to @high_voted.title, article_path(@high_voted) if Vote.exists?%> </h6>
             <small class="card-meta mb-1">Thought Leadership</small>
          </div>
         </div>
        </div> 
       </div>
     <div class="col-lg-3">
-      <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/200x200/?tech,street');">
-            <img class="card-img d-none" src="https://source.unsplash.com/200x400/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-            <div class="card-img-overlay d-flex flex-column">
-            <div class="card-body r">  
-               <small class="card-meta mb-2 text_docor top-left">Thought Leadership</small>
-               <small class="card-title mt-0 bottom-left "><a class="text-white" herf="#">Lorem Ipsum</a></small>
-            </div>
-            </div>
-        </div>
-    </div>
+    <% @categories.limit(1).each do |v|%>
+        <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/200x200/?tech,street');">
+              <img class="card-img d-none" src="https://source.unsplash.com/200x400/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+              <div class="card-img-overlay d-flex flex-column">
+                <div class="card-body r">  
+                  <small class="card-meta mb-2 text_docor top-left"><%= link_to v.name, articles_path %><br></small>
+                  <small class="card-title mt-0 bottom-left "><%= link_to v.articles.last.title, article_path(v.articles.last) if v.articles.exists? %><br> </small>
+                </div>
+              </div>
+          </div>
+        </div> 
+    <%end%>
   </div>
 
 <div class="row gx-0 gy-0"> 
@@ -31,15 +33,14 @@
               <img class="card-img d-none" src="https://source.unsplash.com/200x200/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
               <div class="card-img-overlay d-flex flex-column">
               <div class="card-body r">  
-                <small class="card-meta mb-2 text_docor top-left"><%= c.name %><br></small>
-                <small class="card-title mt-0 bottom-left "><%= c.articles.last.title if c.articles.exists?%><br></small>
+                <small class="card-meta mb-2 text_docor top-left"><%= link_to c.name, articles_path %><br></small>
+                <small class="card-title mt-0 bottom-left "><%= link_to c.articles.last.title, article_path(c.articles.last) if c.articles.exists? %><br></small>
               </div>
             </div>
           </div>
       </div>
     <%end%> 
   </div>
-
 </div> 
 
 

@@ -2,8 +2,8 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @articles = Article.all
-    recent_art 
+    @articles = Article.all.limit(4)
+    recent_art
     @high_voted = Article.find_by_id(h_votes)
   end
 
@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
-    @article.image.attach(params[:article][:image])
+    # @article.image.attach(params[:article][:image])
     if @article.save
       ArticlesCategoryList.create(article_id: @article.id, category_id: article_params[:category_id])
       redirect_to articles_path, notice: 'Article created!'
@@ -49,8 +49,7 @@ class ArticlesController < ApplicationController
 
   def recent_art
     @recent_art ||= Article.all.ordered_by_most_recent.includes(:author)
-  end 
-  
+  end
 
   def h_votes
     Vote.maximum(:article_id)

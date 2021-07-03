@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
-
   def index
-    @categories = Category.includes(:articles).order(:priority) 
+    @categories = Category.includes(:articles).order(:priority)
+    @categories.limit(5)
   end
 
   def show; end
@@ -30,8 +30,8 @@ class CategoriesController < ApplicationController
     redirect_to articles_path, notice: 'Category deleted!'
   end
 
-  private 
-  
+  private
+
   def category_params
     params.require(:category).permit(:name, :priority)
   end
