@@ -45,19 +45,19 @@ group :development do
   gem 'spring'
   group :development, :test do
     gem 'hirb'
-    gem 'rspec-rails' 
+    gem 'rspec-rails'
   end
-  gem 'rexml' 
+  gem 'rexml'
 end
 
 group :test do
   gem 'capybara', '>= 3.26'
   gem 'rspec'
   gem 'shoulda-matchers', '~> 4.0'
-end 
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk-s3', require: false
