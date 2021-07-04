@@ -21,8 +21,8 @@
   </div> 
 
   <div class="mb-3">
-    <%= form.label :image, "Upload image: ", class: 'form-label fs-5'%>
-    <%= form.file_field :image, class: "form-control", placeholder: "upload" %>
+    <%= form.label :image, class: 'form-label fs-5'%>
+    <%= form.file_field :image, direct_upload: true, class: "form-control"%>
   </div>
 
   <div class="mb-3">

@@ -17,6 +17,7 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -44,18 +45,19 @@ group :development do
   gem 'spring'
   group :development, :test do
     gem 'hirb'
-    gem 'rspec-rails'
+    gem 'rspec-rails' 
   end
-  gem 'aws-sdk-s3', '1.46.0', require: false
-  gem 'rexml'
+  gem 'rexml' 
 end
 
 group :test do
   gem 'capybara', '>= 3.26'
   gem 'rspec'
   gem 'shoulda-matchers', '~> 4.0'
-end
+end 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+gem "aws-sdk-s3", require: false

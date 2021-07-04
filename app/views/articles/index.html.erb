@@ -27,8 +27,7 @@
 <%@recent_art.each do |article|%>
   <div class="col-lg-3">
     <div class="card h-100 rounded-0">
-        <%# <%= image_tag article.image.variant(resize_to_limit: [286, 180]) if article.image.attached? %> 
-        <%= article.image if article.image.attached?%>
+        <%= image_tag article.image if article.image.attached? %> 
     </div>
   </div>
   <div class="col-lg-3"> 
