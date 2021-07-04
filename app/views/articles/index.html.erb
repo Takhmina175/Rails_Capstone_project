@@ -1,15 +1,16 @@
 <div class="container mt-4">
   <div class="page-header">
     <div class="d-flex gap-5">
-    <div>
-      <h3> All Categories </h3>
-      <%= link_to 'Add Category', new_category_path, class: "btn btn-success btn-sm"%>
+      <div>
+        <h3> All Categories </h3>
+        <%= link_to 'Add Category', new_category_path, class: "btn btn-success btn-sm"%>
+      </div>
+      <div class="flex-column">
+        <h3> All Articles </h3> 
+        <%= link_to 'Create an Article',  new_article_path, class: "btn btn-success btn-sm" %>
+      </div>
     </div>
-    <div class="flex-column">
-     <h3> All Articles </h3> 
-     <%= link_to 'Create an Article',  new_article_path, class: "btn btn-success btn-sm" %></div>
   </div>
-</div>
 <hr>
 <div class="row">
   <div class="col-lg-3 border-end fs-6">
@@ -20,25 +21,27 @@
       <%end%>
     </div>
   </div>
+
 <div class="col-lg-9">
-<div class="d-flex  flex-wrap">
-  <%@recent_art.each do |article|%>
+<div class="d-flex  flex-wrap"> 
+<%@recent_art.each do |article|%>
   <div class="col-lg-3">
     <div class="card h-100 rounded-0">
-        <%= image_tag article.image.variant(resize_to_limit: [100, 100]), class: "img-responsive" %>
+        <%# <%= image_tag article.image.variant(resize_to_limit: [286, 180]) if article.image.attached? %> 
+        <%= article.image if article.image.attached?%>
     </div>
   </div>
-  <div class="col-lg-3">
-    <div class="card h-100 rounded-0">
-      <div class="card-body">       
-        <h5 class="card-title"><%= article.title %></h5>
-        <p class="card-text"><%= truncate(article.content, :length => 30)%></p>
-        <p class="card-text text-capitalize fst-italic fs-6"> Created by: <%= article.author.username.capitalize %></p>
-        <%=link_to "Read More", article_path(article), class: 'btn btn-outline-success btn-sm'%>
+  <div class="col-lg-3"> 
+      <div class="card h-100 rounded-0">
+        <div class="card-body">       
+          <h5 class="card-title"><%= article.title %></h5>
+          <p class="card-text"><%= truncate(article.content, :length => 30)%></p>
+          <p class="card-text text-capitalize fst-italic fs-6"> Created by: <%= article.author.username.capitalize %></p>
+          <%=link_to "Read More", article_path(article), class: 'btn btn-outline-success btn-sm'%>
+        </div>
       </div>
-    </div>
   </div>
- <%end%><br >
+<%end%>
 </div>
 </div>
-</div>
+
