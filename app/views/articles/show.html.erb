@@ -10,7 +10,7 @@
   </div>
 
   <div class="card mb-3 w-75">
-    <%= image_tag @article.image, width: "287px"%>
+    <%= image_tag @article.image.variant(resize_and_pad: [782, 250]), class: "img-responsive img-fluid" %>
     <div class="card-body">
       <h5 class="card-title text-center"><%= @article.title%></h5>
         <p class="card-text text-center"><%= @article.content%></p>

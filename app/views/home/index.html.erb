@@ -32,8 +32,8 @@
           <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/230x200/?tech,street');">
               <img class="card-img d-none" src="https://source.unsplash.com/200x200/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
               <div class="card-img-overlay d-flex flex-column">
-              <div class="card-body r">  
-                <small class="card-meta mb-2 text_docor top-left"><%= link_to c.name, articles_path %><br></small>
+              <div class="card-body">  
+                <small class="card-meta mb-2 text_docor top-left"><%= link_to c.name, categories_path(c.name) %><br></small>
                 <small class="card-title mt-0 bottom-left "><%= link_to c.articles.last.title, article_path(c.articles.last) if c.articles.exists? %><br></small>
               </div>
             </div>

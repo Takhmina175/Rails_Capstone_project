@@ -1,10 +1,12 @@
 class CategoriesController < ApplicationController
   def index
+    @articles = Article.includes(:categories)
     @categories = Category.includes(:articles).order(:priority)
-    @categories.limit(5)
   end
 
-  def show; end
+  def show 
+    @category = Category.find(params[:id])
+  end
 
   def new
     @category = Category.new
