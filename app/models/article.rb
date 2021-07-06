@@ -10,7 +10,7 @@ class Article < ApplicationRecord
            image/png], message: 'must be a valid image format'
   }, size: { less_than: 5.megabytes, message: 'should be less than 5MB' }
 
-  validates :title, :content, :image, presence: true
+  validates :title, :content, presence: true
   validates :title, length: { maximum: 20 }
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
 
