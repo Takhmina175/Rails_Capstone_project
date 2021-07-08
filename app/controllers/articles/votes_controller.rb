@@ -1,27 +1,26 @@
 class Articles::VotesController < ApplicationController
-#   before_action :authenticate_user!
-#   before_action :set_article
+  before_action :authenticate_user!
+  before_action :set_article
 
-#   def create
-#     @article.votes.where(user_id: current_user.id).first_or_create
-#     respond_to do |format|
-#       format.html { redirect_to @article }
-#       format.json { render json: @article.to_json }
-#     end
-#   end
+  def create
+    @article.votes.where(user_id: current_user.id).first_or_create
+    respond_to do |format|
+      format.html { redirect_to @article }
+      format.json { render json: @article.to_json }
+    end
+  end
 
-#   def destroy
-#     @article.votes.where(user_id: current_user.id).destroy_all
-#     respond_to do |format|
-#       format.html { redirect_to @article }
-#       format.json { head :no_content }
-#     end
-#   end
+  def destroy
+    @article.votes.where(user_id: current_user.id).destroy_all
+    respond_to do |format|
+      format.html { redirect_to @article }
+      format.json { head :no_content }
+    end
+  end
 
-#   private
+  private
 
-#   def set_article
-#     @article = Article.find(params[:article_id])
-#   end
-# end
+  def set_article
+    @article = Article.find(params[:article_id])
+  end
 end

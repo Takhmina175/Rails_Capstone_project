@@ -2,10 +2,10 @@
   <div class="d-flex flex-lg-raw">
     <div class="border w-75 h-100">
       <div class="card_d bg-dark text-white">
-         <%# <div><%= image_tag(@high_voted.image.variant(resize_and_pad: [232, 200]), style: 'width:750px; height: 280px') if Vote.exists?</div>  %>
+         <div><%= image_tag(@high_voted.image.variant(resize_and_pad: [232, 200]), style: 'width:750px; height: 280px') if Vote.exists?%></div>  
         <div class="card-img-overlay">
-          <%# <h5 class="card-title bottom-up mb-1"><%= link_to @high_voted.title, article_path(@high_voted), class: "text-decoration-none text_col" if Vote.exists?</h5> %>
-          <%# <h6 class="bottom-down"><%= @high_voted.content</h6>  %>
+          <h5 class="card-title bottom-up mb-1"><%= link_to @high_voted.title, article_path(@high_voted), class: "text-decoration-none text_col" if Vote.exists?%></h5>
+          <h6 class="bottom-down"><%= @high_voted.content %></h6>
         </div>
       </div>
     </div>
