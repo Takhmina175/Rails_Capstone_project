@@ -25,7 +25,6 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 gem 'active_storage_validations'
-gem 'aws-sdk-s3', require: false
 gem 'image_processing', '~> 1.2'
 gem 'mini_magick'
 # Reduces boot times through caching; required in config/boot.rb
