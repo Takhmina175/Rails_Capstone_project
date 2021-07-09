@@ -8,8 +8,8 @@
       <%= link_to 'Write an Article', new_article_path, class:'a_link' %>&nbsp;
     </div>
     <div class="col-lg-3 d-flex justify-content-end align-items-center">
-        <% if current_user %> 
-            <%= current_user.username %> | &nbsp;
+        <% if @current_user %> 
+            <%= @current_user.username %> | &nbsp;
             <%= link_to 'Log Out', logout_path, class:'a_link' %> &nbsp;
         <% else %>
             <%= link_to "Register", new_user_path, class:'a_link' %> |&nbsp;
