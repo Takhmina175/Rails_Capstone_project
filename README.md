@@ -3,13 +3,13 @@
 
 > The objective of the project is to provide the latest information about innovations, science,  and technology. The website allows a user to create articles, categories, upload an image and receive upvotes for the content and presentation of the article.
 
-![Project Screenshot](image/capture.png) 
+![Project Screenshot](images/capture.png) 
 
 ## Video Explanation
 [Project explanation](https://www.loom.com/share/b996c7770d7a4832ad8901e07de0f722)
 
 ## Link to actual webpage
-[Website Demo Link](https://stormy-castle-37020.herokuapp.com/)
+[Website Demo Link](https://creative-eng.herokuapp.com/)
 
 ## Built With
 * Ruby 2.7.2
