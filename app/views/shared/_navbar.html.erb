@@ -3,11 +3,11 @@
     <div class="col-lg-3">
       <%= image_tag('logos/logo.png', :size => "105x45" )%> 
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-6 justify-content-center">
       <%= link_to 'Home', root_path, class:'a_link' %>&nbsp;&nbsp;
       <%= link_to 'Write an Article', new_article_path, class:'a_link' %>&nbsp;
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-3 justify-content-end">
         <% if @current_user %> 
             <%=user_gravatar(@current_user)%>&nbsp;
             <%= @current_user.username %> | &nbsp;
