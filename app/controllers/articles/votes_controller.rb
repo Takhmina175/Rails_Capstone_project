@@ -3,7 +3,7 @@ class Articles::VotesController < ApplicationController
   before_action :set_article
 
   def create
-    @article.votes.where(user_id: current_user.id).first_or_create
+    @article.votes.where(user_id: @current_user.id).first_or_create
     respond_to do |format|
       format.html { redirect_to @article }
       format.json { render json: @article.to_json }
@@ -11,7 +11,7 @@ class Articles::VotesController < ApplicationController
   end
 
   def destroy
-    @article.votes.where(user_id: current_user.id).destroy_all
+    @article.votes.where(user_id: @current_user.id).destroy_all
     respond_to do |format|
       format.html { redirect_to @article }
       format.json { head :no_content }

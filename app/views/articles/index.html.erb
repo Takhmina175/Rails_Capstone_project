@@ -1,30 +1,43 @@
-<div class="container mt-4">
+<div class="container mt-4 mb-3">
       <div class="page-header">
         <div class="d-flex gap-3">
           <h3> All Articles </h3>
-          <%= link_to 'Create an Article',  new_article_path, class: "btn btn-success btn-sm" %> 
+          <%= link_to 'Create an Article',  new_article_path, class: "btn btn-success btn-sm" %>
+          <%= link_to 'Create an Category',  new_category_path, class: "btn btn-success btn-sm" %>  
         </div>
       </div>
      <hr>
-  <div>
-    <div class="d-flex  flex-wrap">
-      <%@recent_art.each do |article| %>
-        <div class="col-lg-3">
-          <div class="card h-100">
-            <%= image_tag article.image.variant(resize_and_pad: [100, 100]), class: "img-responsive" %>
-          </div>
+
+  <div class="d-flex flex-row flex-wrap">
+    <%@recent_art.limit(2).each do |article| %>
+        <div class="col-lg-3 w-25 border_col">
+            <%= image_tag article.image, class: "w-25 h-50" %>
         </div>     
-        <div class="col-lg-3"> 
-          <div class="card rounded-0">
-            <div class="card-body">       
-              <h5 class="card-title"><%= article.title %></h5>
+        <div class="col-lg-3 w-25"> 
+            <div class="card_art p-3 border_col h-100">       
+              <h6 class="card-title text-decoration-underline text-warning"><%= article.title%></h6>
               <p class="card-text"><%= truncate(article.content, :length => 30)%></p>
-              <p class="card-text text-capitalize fst-italic fs-6"> Created by: <%= article.author.username.capitalize %></p>
-              <%=link_to "Read More", article_path(article), class: 'btn btn-outline-success btn-sm'%>
+              <small class="card-text text-capitalize fst-italic fs-6"> Created by: <%= article.author.username.capitalize %>
+              <%=link_to "Read More", article_path(article), class: 'btn btn-outline-warning btn-sm text-warning border-0'%></small>
             </div>
+        </div>
+    <%end%>
+  </div>
+  <div class="d-flex"> 
+    <%@recent_art.limit(2).offset(2).each do |article| %>
+        <div class="col-lg-3 w-25"> 
+          <div class="card_art p-3 h-100 border_col">       
+              <h6 class="card-title text-decoration-underline text-warning"><%= article.title %></h6>
+              <p class="card-text"><%= truncate(article.content, :length => 30)%></p>
+              <small class="card-text text-capitalize fst-italic fs-6"> Created by: <%= article.author.username.capitalize %></small>
+              <%=link_to "Read More", article_path(article), class: 'btn btn-outline-warning btn-sm text-warning border-0'%>
           </div>
         </div>
-      <%end%>
-    </div> 
-  </div>
+        <div class="col-lg-3 border_col w-25">
+            <%= image_tag article.image, class: "w-25 h-50" %>
+        </div> 
+    <%end%>
+  </div> 
+
+  
 </div>

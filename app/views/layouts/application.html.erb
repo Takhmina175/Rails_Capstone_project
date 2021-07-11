@@ -23,15 +23,15 @@
       <%= yield %> 
    </section>
 <footer class="body_color" style="padding-left: 10px; padding-right: 10px" class="position-absolute">
-  <div class="row gx-0">
+  <div class="gx-0 d-flex align-items-center w-100" style= "justify-content: space-between;">
     <div class="col-lg-4 ">
        <%= image_tag('logos/ft_logo.png', :size => "100x50" )%> 
     </div>
-    <div class="col-lg-4 d-flex justify-content-center align-items-center">
+    <div class="col-lg-4">
        <small style="font-size: 0.7em;">
        <span style="color: orange;">Privacy Policy Terms & Conditions.</span> <span style="color: white;">Copyright. All rights reserved</span></small>
     </div>
-    <div class="col-lg-4 d-flex justify-content-end align-items-center ">
+    <div class="col-lg-4 d-flex align-items-end">
        <small style="font-size: 0.7em; margin-right: 4px;color: white;">Connect with us: </small>
        <div>
         <i class="bi bi-twitter rounded-circle p-1 bck_cl"></i>
@@ -39,7 +39,7 @@
         <i class="bi bi-instagram rounded-circle p-1 bck_cl"></i>
        </div>
     </div>
-    </div>
+  </div>
 </footer>
 </body>
 </html>

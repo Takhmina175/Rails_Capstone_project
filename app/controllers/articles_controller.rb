@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController 
+class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
   def index
@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
     @high_voted = Article.find_by_id(h_votes)
   end
 
-  def show 
+  def show
     @article = Article.find(params[:id])
   end
 

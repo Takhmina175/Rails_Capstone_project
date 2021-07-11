@@ -1,15 +1,16 @@
-<div class="container mt-4">
+<div class="container mt-4 mb-3">
         <div class="page-header">
             <div class="d-flex gap-3">
-                <h3> Articles of Category <%=@category.name%></h3>
+                <h3> Articles of Category</h3>
+                  <h3 class="text-decoration-underline text_col"><%=@category.name%></h3>
             </div>
         </div>
        <hr>     
   <div class="d-flex  flex-wrap">
         <% @category.articles.all.each do |c|%>
-            <div class="col-lg-3">
-                <div class="card h-100">
-                    <%= image_tag c.image.variant(resize_and_pad: [100, 100]), class: "img-responsive" %>
+            <div class="col-lg-3 w-25">
+                <div class="card h-100 rounded-0">
+                    <%= image_tag c.image, class: "w-25 h-50" %>
                 </div>
             </div>
             <div class="col-lg-3 h-75"> 

@@ -1,16 +1,15 @@
-<div class="container mt-4">
+<div class="container mt-4 mb-3">
 <div class="d-inline-flex gap-2">
 <%= link_to '<<Back',  articles_path, class: 'btn btn-secondary' %> 
 <h3> Edit Article</h3> 
 </div>
 <hr>
 
-
 <%= form_for(@article) do |form| %>
 <%= render "shared/form_errors", object: form.object %>
 
-<div class="col-sm-6 col-lg-auto" >
-  <div class="card">
+<div class="col" >
+  <div class="card_category_edit">
     <div class="card-body center bg-light">
 
   <div class="mb-3">
