@@ -11,12 +11,4 @@ class Article < ApplicationRecord
 
   validates :image, content_type: { in: %w[image/jpeg image/gif image/png], message: 'must be a valid image format' },
                     size: { less_than: 5.megabyte, message: 'should be less than 5MB' }
-
-  def display_image
-    image.variant(resize_to_limit: [780, 180])
-  end
-
-  def category_image
-    image.variant(resize_to_limit: [232, 200])
-  end
 end
