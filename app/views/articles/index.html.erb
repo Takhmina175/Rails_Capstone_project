@@ -17,8 +17,8 @@
             <div class="card_art p-3 border_col h-100">       
               <h6 class="card-title text-decoration-underline text-warning"><%= article.title%></h6>
               <p class="card-text"><%= truncate(article.content, :length => 30)%></p>
-              <small class="card-text text-capitalize fst-italic fs-6"> Created by: <%= article.author.username.capitalize %></small>
-              <small><%=link_to "Read More", article_path(article), class: 'btn btn-outline-warning btn-sm text-warning border-0'%></small>
+              <div class="card-text text-capitalize fst-italic fs-6"> Created by: <%= article.author.username.capitalize %></div>
+              <div><%=link_to "Read More", article_path(article), class: 'btn btn-outline-warning btn-sm text-warning border-0'%></div>
             </div>
         </div>
     <%end%>
@@ -29,8 +29,8 @@
           <div class="card_art p-3 h-100 border_col">       
               <h6 class="card-title text-decoration-underline text-warning"><%= article.title %></h6>
               <p class="card-text"><%= truncate(article.content, :length => 30)%></p>
-              <small class="card-text text-capitalize fst-italic fs-6"> Created by: <%= article.author.username.capitalize %></small>
-              <small><%=link_to "Read More", article_path(article), class: 'btn btn-outline-warning btn-sm text-warning border-0'%></small>
+              <div class="card-text text-capitalize fst-italic fs-6"> Created by: <%= article.author.username.capitalize %></div>
+              <div><%=link_to "Read More", article_path(article), class: 'btn btn-outline-warning btn-sm text-warning border-0'%></div>
           </div>
         </div>
         <div class="col-lg-3 border_col w-25">
