@@ -35,4 +35,4 @@
       image: image 
     )
 
-    Vote.create({"user_id"=>1, "article_id"=>1})
+    Article.first.votes.create({"user_id"=>1, "article_id"=>1}) 
