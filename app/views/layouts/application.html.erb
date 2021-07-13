@@ -8,9 +8,38 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script> 
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+  <%= render partial: 'shared/navbar'%>
+   <%= render partial: 'shared/flash'%> 
+   <section>
+      <%= yield %> 
+   </section>
+<footer class="body_color" style="padding-left: 10px; padding-right: 10px" class="position-absolute">
+  <div class="gx-0 d-flex align-items-lg-center w-100" style= "justify-content: space-between;">
+    <div class="col-lg-4 ">
+       <%= image_tag('logos/ft_logo.png', :size => "100x50" )%> 
+    </div>
+    <div class="col-lg-4 align-items-center align-self-center">
+       <small style="font-size: 0.7em;">
+       <span style="color: orange;">Privacy Policy Terms & Conditions.</span> <span style="color: white;">Copyright. All rights reserved</span></small>
+    </div>
+    <div class="col-lg-4 d-flex align-items-center justify-content-lg-end">
+       <small style="font-size: 0.7em; margin-right: 4px;color: white;">Connect with us: </small>
+       <div>
+        <i class="bi bi-twitter rounded-circle p-1 bck_cl"></i>
+        <i class="bi bi-facebook rounded-circle p-1 bck_cl"></i>
+        <i class="bi bi-instagram rounded-circle p-1 bck_cl"></i>
+       </div>
+    </div>
+  </div>
+</footer>
+</body>
 </html>

@@ -1,4 +1,20 @@
-## Getting Started
+## Creative Engineering Blogs
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
+> The objective of the project is to provide the latest information about innovations, science,  and technology. The website allows a user to create articles, categories, upload an image and receive upvotes for the content and presentation of the article.
+
+![Project Screenshot](images/capture.png) 
+
+## Video Explanation
+[Project explanation](https://www.loom.com/share/4840314e522d4d48b610fd6a2822f9f7)
+
+## Link to actual webpage
+[Website Demo Link](https://creative-eng.herokuapp.com/)
+
+## Built With
+* Ruby 2.7.2
+* Rails 6.1.3
+* PostgreSQL
 
 **To clone and run the application locally, use the following steps:**
 - On Github, on the main page of the private-event repository, click ![the Code button](images/code.png) and copy "Clone with HTTPS" by clicking ![the copy icon](images/copy.png).
@@ -61,4 +77,3 @@ All rights reserved to Nelson Sakwa and Takhmina Makhkamova.
 
 Design Idea by <a href="https://www.behance.net/sakwadesignstudio">Nelson Sakwa</a>
  and design available on: [Bahance](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version)
-

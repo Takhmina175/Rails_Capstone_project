@@ -1,0 +1,33 @@
+<div class="container mt-4 mb-3">
+        <div class="page-header">
+            <div class="d-flex gap-3">
+                <h3> Articles of Category</h3>
+                  <h3 class="text-decoration-underline text_col"><%=@category.name%></h3>
+            </div>
+        </div>
+       <hr>     
+  <div class="d-flex  flex-wrap">
+        <% @category.articles.all.each do |c|%>
+            <div class="col-lg-3 w-25">
+                <div class="card h-100 rounded-0">
+                    <%= image_tag c.image, class: "w-25 h-50" %>
+                </div>
+            </div>
+            <div class="col-lg-3 h-75 w-25"> 
+                <div class="card rounded-0">
+                    <div class="card-body">       
+                        <h5 class="card-title"><%= c.title %></h5>
+                        <p class="card-text"><%= truncate(c.content, :length => 30)%></p>
+                        <p class="card-text text-capitalize fst-italic fs-6"> Created by: <%= c.author.username.capitalize %></p>
+                        <%=link_to "Read More", article_path(c), class: 'btn btn-outline-success btn-sm'%>
+                    </div>
+                </div>
+            </div>
+        <%end%>
+    </div> 
+</div>
+</div>
+ 
+
+
+

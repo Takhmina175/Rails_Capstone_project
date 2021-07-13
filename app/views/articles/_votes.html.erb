@@ -1,0 +1,15 @@
+<div class="d-inline-flex">
+<% if @current_user && @current_user.votes?(@article)%>
+    <%= link_to "Upvote", article_vote_path(@article), method: :delete, remote: true, class: 'btn btn-success rounded-0'%>
+<%else%>
+    <%= link_to "Vote", article_vote_path(@article), method: :post, remote: true, class: 'btn btn-success rounded-0'%> 
+<%end%>
+<div class="btn btn-outline-success rounded-0" >
+    <%= @article.votes.count%>
+</div>
+</div>
+
+
+
+
+

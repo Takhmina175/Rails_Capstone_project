@@ -1,0 +1,46 @@
+  <div class="container w-75">
+  <div class="page-header">
+      <div class="d-flex">
+        <%= link_to '<<Back',  articles_path, class: 'btn btn-secondary' %> &nbsp;
+        <h3 style="color: #7f7b78;"> Create	Article</h3> 
+      </div>
+  </div>
+  <hr>
+</div>
+<div class="container mt-4 mb-3">
+<%= form_with(model: @article) do |form| %>
+<%= render "shared/form_errors", object: form.object %>
+
+<div class="col-sm-6 col-lg-auto w-75 " style="margin-left: 6em;">
+  <div class="card_article">
+    <div class="card-body center bg-light"> 
+
+  <div class="mb-3">
+    <%= form.label :category, "Category: ", class: 'form-label fs-5' %>
+    <%= form.collection_select(:category_id, Category.order(:name), :id, :name, {:prompt =>true}, {:class=>'form-select'})%> 
+  </div> 
+
+  <div class="mb-3">
+    <%= form.label :image, class: 'form-label fs-5'%>
+    <%= form.file_field :image, class: "form-control"%>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :title, "Title: ", class: 'form-label fs-5'%>
+    <%= form.text_field :title, class: "form-control", placeholder: "title" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :content, "Content: ", class: 'form-label fs-5' %>
+    <%= form.text_area :content, class: "form-control", placeholder: "content" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Create", class: "btn btn-primary" %>
+  </div>
+ 
+   </div>
+  </div>
+</div>
+<%	end	%>
+</div>

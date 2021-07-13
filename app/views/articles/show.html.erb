@@ -1,0 +1,27 @@
+<div class="row justify-content-center mt-4">
+  <div class="d-flex justify-content-between w-75">
+    <div>
+       <%= link_to '<<Back',  articles_path, class: 'btn btn-secondary' %>
+    </div>
+    <div>
+      <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning'%>
+      <%= link_to 'Delete', article_path(@article),:method => :delete, class: 'btn btn-danger'%>
+    </div>
+  </div>
+
+  <div class="card mb-3 w-75">
+   <div class="d-flex justify-content-center align-items-center"><%= image_tag @article.image, class: "w-50 h-75"%></div>
+    <div class="card-body">
+      <h5 class="card-title text-center"><%= @article.title%></h5>
+        <p class="card-text text-center"><%= @article.content%></p>
+        <small class="fst-italic">Created by: <%=@article.author.username.capitalize%></small>
+        <p class="card-text"><small class="text-muted">
+        On <%= @article.created_at.strftime("%B %d %Y, %l:%M%P") %></small></p>
+      <div id="votes">
+        <%= render partial: "votes"%>
+      </div>
+    <div>
+  </div>
+</div>
+
+

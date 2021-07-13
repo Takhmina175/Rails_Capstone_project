@@ -1,0 +1,74 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.body_color {
+  background-color: #7f7b78;
+}
+
+.card-bg-color {
+  background-color: #4e443e;
+}
+
+.card_b {
+  position: relative;
+  border: none;
+  overflow: hidden;
+  border-radius: 0;
+  min-height: 345px;
+  background-color: #4e443e;
+  border-color: orange;
+}
+
+.card_d {
+  position: relative;
+  border: none;
+  overflow: hidden;
+  border-radius: 0;
+  min-height: 178px;
+  background-color: #4e443e;
+  border-color: orange;
+}
+
+.text_docor {
+  text-decoration: underline;
+  text-decoration-color: yellow;
+  text-decoration-thickness: 0.1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+}
+
+.bottom-up {
+  position: absolute;
+  bottom: 2em;
+  left: 16px;
+}
+
+.bottom-down {
+  position: absolute;
+  bottom: 5px;
+  left: 16px;
+}
+
+.text_col {
+  color: orange;
+}
+
+.header_col {
+  color: #7f7b78;
+}
+
+.title_white {
+  color: white;
+}
+
+.text_dec {
+  text-decoration-color: yellow;
+}

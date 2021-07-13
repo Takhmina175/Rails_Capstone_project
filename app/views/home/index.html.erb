@@ -1,0 +1,45 @@
+<div class="container-fluid body_color">
+  <div class="d-flex flex-lg-raw">
+    <div class="border w-75 h-100">
+      <div class="card_b bg-dark text-white">
+        <%if Vote.exists?%>
+          <div><%= image_tag(@high_voted.image, style: 'width:750px; height: 345px;')%></div>  
+          <div class="card-img-overlay">
+            <h5 class="card-title bottom-up mb-1"><%= link_to @high_voted.title, article_path(@high_voted), class: "text-decoration-none text_col"%></h5>
+            <h6 class="bottom-down"><%= @high_voted.content %></h6>
+          </div>
+        <%end%>
+      </div>
+    </div> 
+  
+  <%@categories.limit(1).each do |category|%> 
+    <%if category.articles.exists?%>
+     <div class="border w-25">
+        <div class="card_b text-white ">
+         <div><%= image_tag(category.articles.last.image, style: 'width:218px; height: 345px')%></div> 
+          <div class="card-img-overlay">
+            <h5 class="card-title"><%= link_to category.name, category_path(category), class: "title_white text_dec" %></h5>
+            <p class="card-text bottom-left"><%= link_to category.articles.last.title, article_path(category.articles.last), class: "text-decoration-none title_white" if category.articles.exists? %></p>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  <%end%>
+</div>
+  
+  <div class="d-flex flex-lg-raw">
+    <%@categories.all.each do |category|%>
+     <%if category.articles.exists?%>
+      <div class="border w-25">
+        <div class="card_d text-white ">
+          <div class=""><%= image_tag(category.articles.first.image, style: 'width:218px; height: 214px') %></div>
+          <div class="card-img-overlay">
+              <h5 class="card-title"><%= link_to category.name, category_path(category), class: "title_white text_dec" %></h5>
+              <p class="card-text bottom-left"><%= link_to category.articles.last.title, article_path(category.articles.last), class: "text-decoration-none title_white"%></p>
+          </div>
+        </div>
+      </div>
+     <%end%> 
+    <%end%> 
+  </div>
+<div>
