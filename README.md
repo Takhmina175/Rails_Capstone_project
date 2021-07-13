@@ -6,7 +6,7 @@
 ![Project Screenshot](images/capture.png) 
 
 ## Video Explanation
-[Project explanation](https://www.loom.com/share/b996c7770d7a4832ad8901e07de0f722)
+[Project explanation](https://www.loom.com/share/4840314e522d4d48b610fd6a2822f9f7)
 
 ## Link to actual webpage
 [Website Demo Link](https://creative-eng.herokuapp.com/)
