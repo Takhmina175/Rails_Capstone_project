@@ -1,7 +1,9 @@
 <div class="container-fluid">
   <div class="d-flex align-items-center w-100" style="justify-content: space-between">
     <div class="col-lg-3">
+    <%= link_to root_path do %>
       <%= image_tag('logos/logo.png', :size => "105x45" )%> 
+    <%end%>
     </div>
     <div class="col-lg-6 d-flex justify-content-center align-items-center">
       <h5><%= link_to 'Home', root_path, class:'a_link' %></h5>&nbsp;&nbsp;
