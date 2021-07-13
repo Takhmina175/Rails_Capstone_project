@@ -12,18 +12,20 @@
       </div>
     </div> 
   
-    <%@categories.limit(1).each do |category|%>
-    <div class="border w-25">
-      <div class="card_b text-white ">
+  <%@categories.limit(1).each do |category|%> 
+    <%if category.articles.exists?%>
+     <div class="border w-25">
+        <div class="card_b text-white ">
          <div><%= image_tag(category.articles.last.image, style: 'width:218px; height: 345px')%></div> 
           <div class="card-img-overlay">
             <h5 class="card-title"><%= link_to category.name, category_path(category), class: "title_white text_dec" %></h5>
             <p class="card-text bottom-left"><%= link_to category.articles.last.title, article_path(category.articles.last), class: "text-decoration-none title_white" if category.articles.exists? %></p>
           </div>
+        </div>
       </div>
-    </div>
-   <%end%>
-  </div>
+    <%end%>
+  <%end%>
+</div>
   
   <div class="d-flex flex-lg-raw">
     <%@categories.all.each do |category|%>
