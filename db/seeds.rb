@@ -10,8 +10,7 @@
     User.create({"username"=>"admin", "email"=>"admin@mail"})
     Category.create({"name"=>"Machine Learning", "priority"=>"A => High"})
     Category.create({"name"=>"Robotics", "priority"=>"B => Medium"})
-    Vote.create({"user_id"=>1, "article_id"=>12})
-
+    
     file = Rails.root.join('app', 'assets', 'images', 'img1.png')
     image = ActiveStorage::Blob.create_and_upload!(
       io: File.open(file, 'rb'),
@@ -34,5 +33,6 @@
       content: "Lorem Ipsum",
       category_id: 2,
       image: image 
-      
     )
+
+    Vote.create({"user_id"=>1, "article_id"=>1})
